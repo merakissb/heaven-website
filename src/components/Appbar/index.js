@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import { useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation'
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -26,6 +27,8 @@ function ResponsiveAppBar() {
   const [menuOpen, setMenuOpen] = React.useState(false);
   const classes = useStyles();
   const router = useRouter();
+  const pathname = usePathname();
+
 
   const toggleMenu = () => {
     setMenuOpen(prev => !prev);
@@ -35,6 +38,8 @@ function ResponsiveAppBar() {
     router.push(path);
     setMenuOpen(false);  // Cerrar menú tras navegar
   };
+
+  console.log(pathname);
 
   return (
     <>
@@ -100,5 +105,4 @@ function ResponsiveAppBar() {
     </>
   );
 }
-
 export default ResponsiveAppBar;
