@@ -3,6 +3,7 @@ import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import theme from '@/theme';
+import ResponsiveAppBar from '@/components/Appbar';
 
 export const metadata = {
   title: "Vertical SPA",
@@ -16,6 +17,7 @@ export default function RootLayout({ children }) {
       <AppRouterCacheProvider options={{ enableCssLayer: true }}>
         <ThemeProvider theme={theme}>
           <CssBaseline />
+            <ResponsiveAppBar />
             {children}
           </ThemeProvider>
         </AppRouterCacheProvider>
