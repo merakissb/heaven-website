@@ -96,7 +96,11 @@ function ResponsiveAppBar() {
             key={page.name}
             onClick={() => handleNavigation(page.path)}  // Navegación SPA
           >
-            <Typography sx={classes.menuItem}>
+            <Typography sx={{
+                ...classes.menuItem,
+                ...(pathname === page.path && classes.activeMenuItem),  // Aplica estilos activos si coincide el path
+              }}
+            >
               {page.name}
             </Typography>
           </MenuItem>
