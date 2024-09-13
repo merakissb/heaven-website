@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import { useRouter } from 'next/navigation';
-import { usePathname } from 'next/navigation'
+import { usePathname } from 'next/navigation';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -37,6 +37,20 @@ function ResponsiveAppBar() {
     router.push(path);
     setMenuOpen(false);  // Cerrar menú tras navegar
   };
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 960) { // Tamaño para pantallas medianas y grandes
+        setMenuOpen(false);  // Cierra el menú si el ancho de la ventana es mayor a 960px
+      }
+    };
+
+    window.addEventListener('resize', handleResize); // Escucha el cambio de tamaño
+
+    return () => {
+      window.removeEventListener('resize', handleResize); // Limpia el evento al desmontar
+    };
+  }, []);
 
   return (
     <>
@@ -109,4 +123,5 @@ function ResponsiveAppBar() {
     </>
   );
 }
+
 export default ResponsiveAppBar;
