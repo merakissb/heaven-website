@@ -29,7 +29,6 @@ function ResponsiveAppBar() {
   const router = useRouter();
   const pathname = usePathname();
 
-
   const toggleMenu = () => {
     setMenuOpen(prev => !prev);
   };
@@ -38,8 +37,6 @@ function ResponsiveAppBar() {
     router.push(path);
     setMenuOpen(false);  // Cerrar menú tras navegar
   };
-
-  console.log(pathname);
 
   return (
     <>
@@ -73,7 +70,10 @@ function ResponsiveAppBar() {
                 <Button
                   key={page.name}
                   onClick={() => handleNavigation(page.path)}  // Navegación SPA
-                  sx={classes.button}
+                  sx={{
+                    ...classes.button,
+                    ...(pathname === page.path && classes.activeButton),  // Aplica estilos activos si coincide el path
+                  }}
                 >
                   {page.name}
                 </Button>

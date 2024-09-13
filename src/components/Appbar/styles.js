@@ -49,6 +49,18 @@ const useStyles = () => ({
     margin: '0 26px',
     fontWeight: '700',
   },
+  activeButton: {
+    color: '#009688',  // Mantener el color del botón activo en verde
+    '&::after': {
+      content: '""',
+      position: 'absolute',
+      width: '100%',  // Mantener la línea cuando el botón está activo
+      height: '2px',
+      background: '#009688',
+      bottom: 0,
+      left: 0,
+    },
+  },
 });
 
 export default useStyles;
