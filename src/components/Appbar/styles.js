@@ -18,13 +18,13 @@ const useStyles = () => ({
       position: 'absolute',
       width: '0',
       height: '2px',
-      background: '#009688',
+      background: '#EC6240',
       bottom: 0,
       left: 0,
       transition: 'width 0.3s ease, background 0.3s ease',
     },
     '&:hover': {
-      color: '#009688',
+      color: '#EC6240',
       '&::after': {
         width: '100%',
       },
@@ -51,25 +51,25 @@ const useStyles = () => ({
     position: 'relative',
   },
   activeButton: {
-    color: '#009688',  // Mantener el color del botón activo en verde
+    color: '#EC6240',  // Mantener el color del botón activo en verde
     '&::after': {
       content: '""',
       position: 'absolute',
       width: '100%',  // Mantener la línea cuando el botón está activo
       height: '2px',
-      background: '#009688',
+      background: '#EC6240',
       bottom: 0,
       left: 0,
     },
   },
   activeMenuItem: {
-    color: '#009688',  // Mantener el color del botón activo en verde
+    color: '#EC6240',  // Mantener el color del botón activo en verde
     '&::after': {
       content: '""',
       position: 'absolute',
       width: '100%',  // Mantener la línea cuando el botón está activo
       height: '2px',
-      background: '#009688',
+      background: '#EC6240',
       bottom: 0,
       left: 0,
     },

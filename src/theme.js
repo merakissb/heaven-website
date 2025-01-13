@@ -1,9 +1,7 @@
 'use client';
 
-import '@fontsource/roboto/300.css';
-import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/500.css';
-import '@fontsource/roboto/700.css';
+// Supports weights 400-900
+import '@fontsource-variable/maven-pro';
 import { createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
@@ -17,7 +15,7 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: 'Roboto, sans-serif',
+    fontFamily: 'Maven Pro Variable, sans-serif',
   },
   components: {
     MuiAlert: {
